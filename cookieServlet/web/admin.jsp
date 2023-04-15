@@ -15,28 +15,30 @@
     <body>
         <h1>Servlet Session</h1><hr>
         
-        <% boolean isAdmin = session.getAttribute("username") != null 
-            && session.getAttribute("username").equals("admin"); %>
+        <%  String username = (String)session.getAttribute("username");
+            boolean isAdmin = username != null && username.equals("admin"); %>
         
         <% if (isAdmin) { %>
             <%@page import="java.util.Random" %>
             <% 
-                String[] jokes = {"Why don't scientifist trust atoms? Because they make up everything!",
-                      "Why did the scarecrow win an award? Beacause he was outstanding in his field!",
-                      "Why couldn't the bicycle stand up by itself? It was two-tired!",
-                      "What's orange and sound like a parrot? A carrot!"};
-                
+                String[] jokes = {
+                    "Why don't scientifist trust atoms? Because they make up everything!",
+                    "Why did the scarecrow win an award? Beacause he was outstanding in his field!",
+                    "Why couldn't the bicycle stand up by itself? It was two-tired!",
+                    "What's orange and sound like a parrot? A carrot!"
+                };
                 Random random = new Random();
                 int randomIndex = random.nextInt(jokes.length);
+                String randomJoke = jokes[randomIndex];
             %>
-        
-            <h2>Welcome, <%= session.getAttribute("username") %>!</h2>
+                
+            <h2>Welcome, <%= username %>!</h2>
         
             <form action="logout" method="post">
                 <input type="submit" value="Logout"><br>
             </form>
             
-            <p><%= jokes[randomIndex] %></p>
+            <p><%= randomJoke %></p>
             
         <% } else { %>
             <h2>Unauthorized access! You must go back to landing page and log-in!</h2>

@@ -41,8 +41,14 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("index.html");
     }
 
-    private boolean isAdmin(String username, String password)
-    {
+    /**
+     * Checks if user provided correct credentials for Admin access.
+     *
+     * @param username provided username by user
+     * @param password provided password by user
+     * @return boolean
+     */
+    private boolean isAdmin(String username, String password) {
         return username.equals("admin") && password.equals("admin123");
     }
     

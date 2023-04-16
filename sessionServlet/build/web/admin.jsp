@@ -36,6 +36,7 @@
             <form action="logout" method="post">
                 <input type="submit" value="Logout"><br>
             </form>
+            <hr>
             
             <p><%= randomJoke %></p>
             

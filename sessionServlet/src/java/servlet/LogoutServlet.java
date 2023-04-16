@@ -16,8 +16,15 @@ import jakarta.servlet.http.HttpSession;
  * @author lukas
  */
 public class LogoutServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
+    
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
@@ -27,4 +34,5 @@ public class LogoutServlet extends HttpServlet {
 
             response.sendRedirect("index.html");
     }
+    
 }

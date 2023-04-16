@@ -16,8 +16,15 @@ import jakarta.servlet.http.HttpSession;
  * @author lukas
  */
 public class LoginServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
+    
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
@@ -33,9 +40,10 @@ public class LoginServlet extends HttpServlet {
             
             response.sendRedirect("index.html");
     }
-    
+
     private boolean isAdmin(String username, String password)
     {
         return username.equals("admin") && password.equals("admin123");
     }
+    
 }

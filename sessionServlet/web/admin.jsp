@@ -15,10 +15,9 @@
     <body>
         <h1>Servlet Session</h1><hr>
         
-        <%  String username = (String)session.getAttribute("username");
-            boolean isAdmin = username != null && username.equals("admin"); %>
+        <% String username = (String)session.getAttribute("username"); %>
         
-        <% if (isAdmin) { %>
+        <% if (username != null) { %>
             <%@page import="java.util.Random" %>
             <% 
                 String[] jokes = {

@@ -13,4 +13,4 @@ Toto je repozitář pro předmět Objektové programování II (Java)
 
 ### Admin přístup pro Session projekt
 
-- [zde](https://github.com/lukyncze/objektove-programovani-2/blob/376d28ade199c4ca0f6f8e0b1055d50aa144852d/sessionServlet/src/java/servlet/LoginServlet.java#L46)
+- [zde](https://github.com/lukyncze/objektove-programovani-2/blob/main/sessionServlet/src/java/servlet/LoginServlet.java#L52)
